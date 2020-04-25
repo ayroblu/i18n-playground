@@ -1,0 +1,60 @@
+.app {
+  display: flex;
+  flex-direction: column;
+
+  .languageSection {
+    margin: 10px;
+    display: block;
+    border: 1px solid #ddd;
+    display: flex;
+
+    &:lang(zh) {
+      flex-direction: column;
+      inline-size: 300px;
+      overflow-x: auto;
+    }
+    &:lang(mn) {
+      flex-direction: column;
+      inline-size: 300px;
+      overflow-x: auto;
+    }
+
+    .sideBar {
+      display: block;
+      list-style-type: none;
+      margin: 0;
+      padding: 10px;
+    }
+    .content {
+      display: block;
+      margin: 0;
+      padding: 10px;
+    }
+    .spacer {
+      inline-size: 250px;
+      block-size: 250px;
+      border: 1px solid #ddd;
+    }
+  }
+}
+:lang(zh) {
+  writing-mode: vertical-rl;
+  font-variant-east-asian: traditional;
+}
+.combined:lang(zh) {
+  text-combine-upright: all;
+}
+em:lang(zh) {
+  font-style: normal;
+  text-emphasis: dot;
+}
+:lang(mn) {
+  writing-mode: vertical-lr;
+}
+.combined:lang(mn) {
+  text-combine-upright: all;
+}
+:lang(ar) {
+  direction: rtl;
+}
+

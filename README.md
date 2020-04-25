@@ -15,4 +15,5 @@ Mongolian: Had to use http://trans.mglip.com/EnglishC2T.aspx as modern scripts u
 
 1. Cover mixed content (english + the others)
 2. Cover bidirectional text (arabic)
-3. Cover transations + counters + plurals
+3. Cover transations + counters + plurals + sorting
+4. Text entry
