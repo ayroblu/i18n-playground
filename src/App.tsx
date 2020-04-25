@@ -13,6 +13,7 @@ function App() {
       </ul>
       <h1>This is my header title</h1>
       <p>This is my child content</p>
+      <p lang="zh">写出来的中文</p>
     </div>
   );
 }
