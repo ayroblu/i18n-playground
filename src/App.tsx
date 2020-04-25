@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.app} lang='en'>
+      <ul className={styles.sideBar}>
+        <li>English</li>
+        <li>Chinese (left to right)</li>
+        <li>Chinese Traditional</li>
+        <li>Arabic</li>
+        <li>Mongolian</li>
+      </ul>
+      <h1>This is my header title</h1>
+      <p>This is my child content</p>
     </div>
   );
 }
