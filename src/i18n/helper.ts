@@ -1,5 +1,7 @@
 type EnPluralTypes = "one" | "other";
+type EnOrdinalPluralTypes = "one" | "two" | "few" | "other";
 type EnPluralMap = { [k in EnPluralTypes]: string };
+type EnOrdinalPluralMap = { [k in EnOrdinalPluralTypes]: string };
 
 export const getMessageFn = <
   A extends { [key: string]: any },
@@ -17,11 +19,29 @@ export function getEnPlural(plurals: EnPluralMap, num: number): string {
   if (Object.keys(plurals).length === 0) {
     throw new Error("No plurals provided");
   }
-  const res = new Intl.PluralRules().select(num) as EnPluralTypes;
+  const res = new Intl.PluralRules("en").select(num) as EnPluralTypes;
   const plural = plurals[res];
   if (!plural)
     throw new Error(
       `Did not find a result for ${JSON.stringify(plurals)}, ${res}, ${num}`
     );
-  return plurals[res];
+  return plural;
+}
+
+export function getEnOrdinalPlural(
+  plurals: EnOrdinalPluralMap,
+  num: number
+): string {
+  if (Object.keys(plurals).length === 0) {
+    throw new Error("No plurals provided");
+  }
+  const res = new Intl.PluralRules("en", { type: "ordinal" }).select(
+    num
+  ) as EnOrdinalPluralTypes;
+  const plural = plurals[res];
+  if (!plural)
+    throw new Error(
+      `Did not find a result for ${JSON.stringify(plurals)}, ${res}, ${num}`
+    );
+  return plural;
 }
